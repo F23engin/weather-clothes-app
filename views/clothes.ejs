@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title%></title>
+    <link rel="stylesheet" href="stylesheets/user.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap" rel="stylesheet">
+</head>
+<body style="background-image: url(userhome<%=weatherMain%>.jpeg);">
+    <div>
+        <button type="button" id="js-buttonHamburger" class="c-button p-hamburger" aria-controls="global-nav" aria-expanded="false" >
+            <span class="p-hamburger__line">
+                <span class="u-visuallyHidden">
+                    メニューの開閉
+                </span>
+            </span>
+        </button>
+        <div id="groval-nav" class="p-drawer">
+            <p>MENU</p>
+            <p><a href="" style="color: rgb(<%=mainColor%>);">contact</a></p>
+            <p><a href="/signin" alter="signinページへ移動します" style="color: rgb(<%=mainColor%>);">sign out</a></p>
+            <p><a href="/userhome" style="color: rgb(<%=mainColor%>);">前のページへ戻る</a></p>
+    </div>
+    <div>
+        <div>
+            <div style="width: 50%; display: inline-block">
+                <p class="clothes-p"><%= temperature%>度で快適に過ごせる服装</p>
+                <img src="<%= temperature%>.png" style="width: 60%;">
+            </div>
+            <!-- <div style="width: 70%; padding: 10px; display: inline-block; vertical-align: top;">
+                <div style="width: 30%; display: inline-block;">
+                    <h2>少し暖かく</h2>
+                    <img src="<%= temperature%>.png" style="width: 100%;">
+                </div>
+                <div style="width: 30%; display: inline-block;">
+                    <h2>少し涼しく</h2>
+                    <img src="<%= temperature%>.png" style="width: 100%;">
+                </div>
+            </div> -->
+        </div>
+    </div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="javascripts/userhomeScript.js"></script>
+</body>
+</html>

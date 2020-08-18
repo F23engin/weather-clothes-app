@@ -1,0 +1,264 @@
+@font-face {
+    font-family: 'Sawarabi Mincho', sans-serif;
+    src: url("https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap")
+}
+
+body {
+    font-family: 'Sawarabi Mincho', sans-serif;
+    font-size: 25px;
+    font-weight: 600;
+    padding: 50px;
+    text-align: center;;
+    text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.7);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+  
+a {
+    display: inline-block;
+    text-decoration: none;
+    outline: none;
+    transform: scale(1);
+    transition: 0.4s;
+}
+a:hover {
+    transform: scale(1.1);
+}
+
+.usernamePosition{
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      right: 100px;
+}
+
+.input {
+    display: inline-block;
+}
+
+.input input[type="number"] {
+    position: relative;
+    top: -5px;
+    right: 3px;
+    box-sizing: border-box;
+    width: 70px;
+    height: 30px;
+    padding: 3px;
+    color: rgb(40, 40, 40);
+    border: 2px solid rgb(40, 40, 40);
+    border-radius: 10%;
+    box-shadow: 0 0 30px rgba(255, 255, 255, .5);
+    transition: all 0.3s ease-in-out;
+}
+.input input[type='number']:hover,
+.input input[type='number']:focus {
+    outline: none;
+    border: 2px solid;
+    box-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
+}
+  
+.submit-button {
+    display: inline-block;
+    position: relative;
+    border: 2px solid rgb(40, 40, 40);
+    border-radius: 10%;
+    font-size: 13px;
+    cursor: pointer;
+    padding: 3px 10px;
+    background: rgba(255, 255, 255, .2);
+    opacity: 0.9;
+    box-shadow: 0 0 50px transparent;
+    transition: all 0.3s ease-in-out;
+}
+
+.submit-button:hover,
+.submit-button:focus {
+    box-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, .7);
+}
+  
+.c-button {
+    display: inline-block;
+    position: relative;
+    z-index: 20;
+    background-color: rgba(255, 255, 255, .2);
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    appearance: none;
+    transition: all 0.3s ease-in-out;
+}
+.c-button:hover,
+.c-button:focus {
+    background-color: rgba(255, 255, 255, .5);
+}
+
+.PrefForm {
+    display: inline-block;
+    width: auto;
+}
+
+.PrefList {
+    text-align: left;
+    font-size: 20px;
+    line-height: 40px;
+}
+
+.PrefList input[type="radio"] {
+    display: none;
+}
+.PrefList input[type="radio"]:checked + .labelCity {
+    background-color: rgba(174, 133, 133, .5);
+}
+
+
+.labelCity {
+    box-sizing: border-box;
+    width: 100px;
+    height: auto;
+    margin: 5px 3px;
+    padding: 3px 5px;
+    border: 2px solid rgba(40, 40, 40, .5);
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+.labelCity:hover,
+.labelCity:focus { 
+    cursor: pointer;
+    border: 2px solid rgba(40, 40, 40, .8);
+    background-color: rgba(174, 133, 133, .5);
+}
+.labelCity input[type="radio"]:checked {
+    background-color: rosybrown;
+}
+
+  
+.p-hamburger {
+    position: fixed;
+    z-index: 20;
+    width: 50px;
+    height: 50px;
+    margin: auto;
+    border: 2px;
+    border-style: solid;
+    border-radius: 30%;
+    outline: none;
+    box-shadow: 0 0 30px transparent;
+    top: 20px;
+    right: 20px;
+    transition: all 0.3s ease-in-out;
+}
+  
+.p-hamburger:hover,
+.p-hamburger:focus {
+    box-shadow: 0 0 3px rgba(255, 255, 255, .5);
+}
+  
+.p-hamburger__line {
+    position: absolute;
+    width: 25px;
+    height: 2px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    background-color: rgb(0, 0, 0);
+    -webkit-transition: inherit;
+    transition: inherit;
+}
+  
+.p-hamburger__line::before,
+.p-hamburger__line::after {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: '';
+    background-color: inherit;
+    -webkit-transition: inherit;
+    transition: inherit;
+}
+.p-hamburger__line::before {
+    top: -5px;
+}
+.p-hamburger__line::after {
+    top: 5px;
+}
+  
+.u-visuallyHidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    margin: -1px;
+}
+  
+.groval-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    transform: translateX(100%);
+    transition: all 0.3s ease-in-out;
+}
+.isExpanded .menu {
+    transform: translateX(0);
+}
+  
+.p-hamburger[aria-expanded="true"] .p-hamburger__line {
+    background-color: transparent;
+}
+  
+.p-hamburger[aria-expanded="true"] .p-hamburger__line::before,
+.p-hamburger[aria-expanded="true"] .p-hamburger__line::after {
+    top: 0;
+    background-color: rgb(40, 40, 40);
+}
+  
+.p-hamburger[aria-expanded="true"] .p-hamburger__line::before {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.p-hamburger[aria-expanded="true"] .p-hamburger__line::after {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+  
+.p-drawer {
+    position: fixed;
+    z-index: 10;
+    top: 40px;
+    right: 70px;
+    width: 300px;
+    /* height: 300px; */
+    background-color: transparent;
+    transform: translateX(130%);
+    -webkit-transition: transform .6s ease-in-out;
+    transition: all .6s ease-in-out;
+}
+.is-drawerActive .p-drawer {
+    transform: translateX(0);
+    background-color: rgba(255, 255, 255, .5);
+    transition: all .6s ease-in-out;
+}
+
+.clothes-p {
+    margin: 0;
+    padding: 3px 0;
+}

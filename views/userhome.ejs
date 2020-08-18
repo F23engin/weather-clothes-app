@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="stylesheets/user.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap" rel="stylesheet">
+</head>
+<body style="background-image: url(userhome<%=weatherMain%>.jpeg);">
+    <div>
+    <button type="button" id="js-buttonHamburger" class="c-button p-hamburger" aria-controls="global-nav" aria-expanded="false" >
+        <span class="p-hamburger__line">
+            <span class="u-visuallyHidden">
+                メニューの開閉
+            </span>
+        </span>
+    </button>
+    <div id="groval-nav" class="p-drawer">
+        <p>hello <%- username%> ;)</p>
+        <div><p><a href="" style="color: rgb(<%=mainColor%>);">contact</a></p></div>
+        <div><p><a href="/signin" alter="signinページへ移動します" style="color: rgb(<%=mainColor%>);">sign out</a></p></div>
+        <!-- <p><a href="" style="color: rgb(<%=mainColor%>);">ヘルプ</a></p> -->
+    </div>
+    <div>
+        <div>
+            <form action="/userhome" method="POST">
+                <div>
+                    <div class="input">
+                        <label for="inputTemperature">快適に過ごしたい気温： </label>
+                        <input type="number" name="temperature" id="inputTempertuer" style="background-color: rgba(<%=mainColor%>, .5);">℃
+                    </div> 
+                    <input type="hidden" name="weatherMain" value="<%=weatherMain%>"> 
+                    <input type="hidden" name="mainColor" value="<%=mainColor%>">
+                </div>
+                <div style="margin: 5px 0px;">
+                    <input type="submit" value="服装チェック" class="submit-button">
+                </div>
+            </form>
+        </div>
+    </div>
+    <div style="padding: 5px 10px; margin: 5px auto; display:inline-block;">
+        <h3><%=spot%></h3>
+        <p><%= weather%></p>
+        <p><span style="color: rgb(255, 74, 24);"><%= max%>℃</span>
+            <span>／</span>
+        <span style="color: rgb(37, 90, 205);"><%= min%>℃</span></p>
+        <p>只今の気温：<%= temp%>℃</p>
+        <p>体感温度：<%= feels%>℃</p>
+    </div>
+    <div class="PrefForm">
+        <form action="/weatherSpot" method="POST" >
+            <div class="PrefChoiseList">
+            <div class="PrefList">
+                <input type="radio" name="city" id="Hokkaido" value="Hokkaido"><label for="Hokkaido" class="labelCity">北海道</label>
+                <input type="radio" name="city" id="Aomari" value="Aomori"><label for="Aomari" class="labelCity">青森</label>
+                <input type="radio" name="city" id="Iwate" value="Iwate"><label for="Iwate" class="labelCity">岩手</label>
+                <input type="radio" name="city" id="Miyagi" value="Miyagi"><label for="Miyagi" class="labelCity">宮城</label>
+                <input type="radio" name="city" id="Akita" value="Akita"><label for="Akita" class="labelCity">秋田</label>
+                <input type="radio" name="city" id="Yamagata" value="Yamagata"><label for="Yamagata" class="labelCity">山形</label>
+                <input type="radio" name="city" id="Fukushima" value="Fukushima"><label for="Fukushima" class="labelCity">福島</label>
+            </div>
+            <div class="PrefList">
+                <input type="radio" name="city" id="Tokyo" value="Tokyo"><label for="Tokyo" class="labelCity">東京</label>
+                <input type="radio" name="city" id="Kanagawa" value="Kanagawa"><label for="Kanagawa" class="labelCity">神奈川</label>
+                <input type="radio" name="city" id="Saitama" value="Saitama"><label for="Saitama" class="labelCity">埼玉</label>
+                <input type="radio" name="city" id="Chiba" value="Chiba"><label for="Chiba" class="labelCity">千葉</label>
+                <input type="radio" name="city" id="Ibaraki" value="Ibaraki"><label for="Ibaraki" class="labelCity">茨城</label>
+                <input type="radio" name="city" id="Tochigi" value="Tochigi"><label for="Tochigi" class="labelCity">栃木</label>
+                <input type="radio" name="city" id="Gunma" value="Gunma"><label for="Gunma" class="labelCity">群馬</label>
+                <input type="radio" name="city" id="Yamanashi" value="Yamanashi"><label for="Yamanashi" class="labelCity">山梨</label>
+                <input type="radio" name="city" id="Niigata" value="Niigata"><label for="Niigata" class="labelCity">新潟</label>
+                <input type="radio" name="city" id="Nagano" value="Nagano"><label for="Nagano" class="labelCity">長野</label>
+            </div>
+            <div class="PrefList">
+                <input type="radio" name="city" id="Aichi" value="Aichi"><label for="Aichi" class="labelCity">愛知</label>
+                <input type="radio" name="city" id="Gifu" value="Gifu"><label for="Gifu" class="labelCity">岐阜</label>
+                <input type="radio" name="city" id="Shizuoka" value="Shizuoka"><label for="Shizuoka" class="labelCity">静岡</label>
+                <input type="radio" name="city" id="Mie" value="Mie"><label for="Mie" class="labelCity">三重</label>
+                <input type="radio" name="city" id="Toyama" value="Toyama"><label for="Toyama" class="labelCity">富山</label>
+                <input type="radio" name="city" id="Ishikawa" value="Ishikawa"><label for="Ishikawa" class="labelCity">石川</label>
+                <input type="radio" name="city" id="Fukui" value="Fukui"><label for="Fukui" class="labelCity">福井</label>
+                <input type="radio" name="city" id="Osaka" value="Osaka"><label for="Osaka" class="labelCity">大阪</label>
+                <input type="radio" name="city" id="Hyogo" value="Hyogo"><label for="Hyogo" class="labelCity">兵庫</label>
+                <input type="radio" name="city" id="Kyoto" value="Kyoto"><label for="Kyoto" class="labelCity">京都</label>
+                <input type="radio" name="city" id="Shiga" value="Shiga"><label for="Shiga" class="labelCity">滋賀</label>
+                <input type="radio" name="city" id="Nara" value="Nara"><label for="Nara" class="labelCity">奈良</label>
+                <input type="radio" name="city" id="Wakayama" value="Wakayama"><label for="Wakayama" class="labelCity">和歌山</label> 
+            </div>
+            <div class="PrefList">
+                <input type="radio" name="city" id="Shimane" value="Shimane"><label for="Shimane" class="labelCity">島根</label>
+                <input type="radio" name="city" id="Tottori" value="Tottori"><label for="Tottori" class="labelCity">鳥取</label>
+                <input type="radio" name="city" id="Okayama" value="Okayama"><label for="Okayama" class="labelCity">岡山</label>
+                <input type="radio" name="city" id="Hiroshima" value="Hiroshima"><label for="Hiroshima" class="labelCity">広島</label>
+                <input type="radio" name="city" id="Yamaguchi" value="Yamaguchi"><label for="Yamaguchi" class="labelCity">山口</label>
+                <input type="radio" name="city" id="Tokushima" value="Tokushima"><label for="Tokushima" class="labelCity">徳島</label>
+                <input type="radio" name="city" id="Kagawa" value="Kagawa"><label for="Kagawa" class="labelCity">香川</label>
+                <input type="radio" name="city" id="Ehime" value="Ehime"><label for="Ehime" class="labelCity">愛媛</label>
+                <input type="radio" name="city" id="Kouchi" value="Kouchi"><label for="Kouchi" class="labelCity">高知</label>
+            </div>
+            <div class="PrefList">
+                <input type="radio" name="city" id="Fukuoka" value="Fukuoka"><label for="Fukuoka" class="labelCity">福岡</label>
+                <input type="radio" name="city" id="Saga" value="Saga"><label for="Saga" class="labelCity">佐賀</label>
+                <input type="radio" name="city" id="Nagasaki" value="Nagasaki"><label for="Nagasaki" class="labelCity">長崎</label>
+                <input type="radio" name="city" id="Kumamoto" value="Kumamoto"><label for="Kumamoto" class="labelCity">熊本</label>
+                <input type="radio" name="city" id="Oita" value="Oita"><label for="Oita" class="labelCity">大分</label>
+                <input type="radio" name="city" id="Miyazaki" value="Miyazaki"><label for="Miyazaki" class="labelCity">宮崎</label>
+                <input type="radio" name="city" id="Kagoshima" value="Kagoshima"><label for="Kagoshima" class="labelCity">鹿児島</label>
+                <input type="radio" name="city" id="Okinawa" value="Okinawa"><label for="Okinawa" class="labelCity">沖縄</label>
+            </div>
+            </div>
+            <input type="hidden" name="username" value="<%=username%>">
+            <input type="submit" value="天気チェック" class="submit-button">
+        </form>
+    </div>
+    </div>
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="javascripts/userhomeScript.js"></script>
+</body>
+</html>
